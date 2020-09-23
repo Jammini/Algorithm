@@ -1,28 +1,24 @@
 public class Solution {
 
-    public int[] createTargetArray(int[] nums, int[] index) {
+    public static int[] finalPrices(int[] prices) {
 
-        int[] result = new int[nums.length];
+        int[] result = new int[prices.length];
 
-        int length = nums.length;
-
-        for (int i = 0; i < length; i++) {
-            result[i] = -1;
+        for (int i = 0; i < prices.length; i++) {
+            result[i] = prices[i];
         }
 
-        for (int i = 0; i < length; i++) {
-            if (result[index[i]] >= 0) {
-                for (int j = length - 1; j > index[i]; j--) {
-                    result[j] = result[j - 1];
+        for (int i = 0; i < prices.length; i++) {
+            for (int j = i + 1; j < prices.length; j++) {
+                if (prices[i] >= prices[j]) {
+                    result[i] = prices[i] - prices[j];
+                    break;
                 }
             }
-            result[index[i]] = nums[i];
         }
 
-
-        for (int i = 0; i < result.length; i++) {
-            System.out.println(result[i]);
-
+        for (int i = 0; i < prices.length; i++) {
+            System.out.print(result[i] + " ");
         }
 
         return result;
@@ -30,12 +26,15 @@ public class Solution {
 
 
     public static void main(String[] args) {
-        Solution s = new Solution();
+
+        int[] price1 = {8, 4, 6, 2, 3};
+        int[] price2 = {1, 2, 3, 4, 5};
+        int[] price3 = {10, 1, 1, 6};
 
 
-        int[] nums = {0, 1, 2, 3, 4};
-        int[] index = {0, 1, 2, 2, 1};
-
-        s.createTargetArray(nums, index);
+        System.out.println(finalPrices(price1));
+        System.out.println(finalPrices(price2));
+        System.out.println(finalPrices(price3));
     }
 }
+
