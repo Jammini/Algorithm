@@ -1,4 +1,4 @@
-package programmers;
+package programmers.P42883;
 
 public class Algo_1v1 {
    public static void main(String[] args) {   
@@ -9,9 +9,9 @@ public class Algo_1v1 {
    public static String solution(String number, int k) {
       String answer="";
 
-      int front = 0; // ��
-      int size = number.length()-k; // ������
-      int num =0; // �ڸ� ���ڸ� ��� �� ����
+      int front = 0;
+      int size = number.length()-k;
+      int num =0;
       
       for(int i=0; i<size; i++) {
          int tmp = -1; 
