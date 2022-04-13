@@ -98,7 +98,7 @@ public class Solution {
     }
 
 
-    public static void main(String[] args) {
+    public static void Main(String[] args) {
 
         String[] A = {"bella", "label", "roller"};
         String[] B = {"cool", "lock", "cook"};
@@ -135,7 +135,7 @@ public class Solution {
     }
 
 
-    public static void main(String[] args) {
+    public static void Main(String[] args) {
         Solution s = new Solution();
 
         ListNode node4 = new ListNode(4);
@@ -186,7 +186,7 @@ public class Solution {
     }
 
 
-    public static void main(String[] args) {
+    public static void Main(String[] args) {
 
         String[] A = {"bella", "label", "roller"};
         String[] B = {"cool", "lock", "cook"};
@@ -223,7 +223,7 @@ public class Solution {
     }
 
 
-    public static void main(String[] args) {
+    public static void Main(String[] args) {
         Solution s = new Solution();
 
         ListNode node4 = new ListNode(4);
@@ -274,7 +274,7 @@ public class Solution {
     }
 
 
-    public static void main(String[] args) {
+    public static void Main(String[] args) {
 
         String[] A = {"bella", "label", "roller"};
         String[] B = {"cool", "lock", "cook"};
@@ -311,7 +311,7 @@ public class Solution {
     }
 
 
-    public static void main(String[] args) {
+    public static void Main(String[] args) {
         Solution s = new Solution();
 
         ListNode node4 = new ListNode(4);
