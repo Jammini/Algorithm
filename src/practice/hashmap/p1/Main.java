@@ -1,4 +1,4 @@
-package practice.hashmap;
+package practice.hashmap.p1;
 
 import java.util.HashMap;
 import java.util.Scanner;
