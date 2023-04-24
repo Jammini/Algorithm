@@ -3,27 +3,14 @@ package leetcode.p238;
 class Solution {
     public int[] productExceptSelf(int[] nums) {
         int[] answer = new int[nums.length];
-        int zeroCnt = 0;
-        int zeroIndex = 0;
-        int total = 1;
-
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == 0) {
-                zeroCnt++;
-                zeroIndex = i;
-            } else {
-                total *= nums[i];
-            }
+        int right = 1;
+        answer[0] = 1;
+        for (int i = 1; i < nums.length; i++) {
+            answer[i] = answer[i - 1] * nums[i - 1];
         }
-
-        if (zeroCnt > 1) {
-            return answer;
-        } else if (zeroCnt == 1) {
-            answer[zeroIndex] = total;
-        } else {
-            for (int i = 0; i < nums.length; i++) {
-                answer[i] = total / nums[i];
-            }
+        for (int i = nums.length - 2; i >= 0; i--) {
+            right *= nums[i + 1];
+            answer[i] = right * answer[i];
         }
         return answer;
     }
