@@ -1,8 +1,8 @@
-package practice.dfs.nm.p9;
+package practice.dfs.nm.p10;
 
 import java.util.Arrays;
 
-public class NM9 {
+public class NM10 {
     int[] arr;
     boolean[] visited;
 
@@ -10,10 +10,10 @@ public class NM9 {
         arr = new int[M];
         visited = new boolean[N];
         Arrays.sort(nums);
-        dfs(N, M,  0, nums);
+        dfs(N, M,  0,0, nums);
     }
 
-    private void dfs(int N, int M, int L, int[] nums) {
+    private void dfs(int N, int M, int index, int L, int[] nums) {
         if (L == M) {
             for (int i : arr) {
                 System.out.print(i + " ");
@@ -23,7 +23,7 @@ public class NM9 {
         }
 
         int before = 0;
-        for (int i = 0; i < N; i++) {
+        for (int i = index; i < N; i++) {
             if (visited[i]) {
                 continue;
             }
@@ -31,15 +31,15 @@ public class NM9 {
                 before = nums[i];
                 visited[i] = true;
                 arr[L] = nums[i];
-                dfs(N, M,L + 1, nums);
+                dfs(N, M, i,L + 1, nums);
                 visited[i] = false;
             }
         }
     }
 
     public static void main(String[] args) {
-        new NM9().solution(3, 1, new int[]{4, 4, 2});
-        new NM9().solution(4, 2, new int[]{9, 7, 9, 1});
-        new NM9().solution(4, 4, new int[]{1, 1, 1, 1});
+        new NM10().solution(3, 1, new int[]{4, 4, 2});
+        new NM10().solution(4, 2, new int[]{9, 7, 9, 1});
+        new NM10().solution(4, 4, new int[]{1, 1, 2, 2});
     }
 }
