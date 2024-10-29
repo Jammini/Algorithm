@@ -19,7 +19,7 @@ public class NM4 {
 
         for (int i = index; i < N; i++) {
             arr[L] = i + 1;
-            dfs(N, M, i,L + 1);
+            dfs(N, M, i, L + 1);
         }
     }
 

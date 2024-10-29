@@ -1,8 +1,8 @@
-package practice.dfs.nm.p6;
+package practice.dfs.nm.p11;
 
 import java.util.Arrays;
 
-public class NM6 {
+public class NM11 {
     int[] arr;
 
     public void solution(int N, int M, int[] nums) {
@@ -20,15 +20,19 @@ public class NM6 {
             return;
         }
 
-        for (int i = index; i < N; i++) {
-            arr[L] = nums[i];
-            dfs(N, M, i + 1, L + 1, nums);
+        int before = 0;
+        for (int i = 0; i < N; i++) {
+            if (before != nums[i]) {
+                before = nums[i];
+                arr[L] = nums[i];
+                dfs(N, M, i, L + 1, nums);
+            }
         }
     }
 
     public static void main(String[] args) {
-        new NM6().solution(3, 1, new int[]{4, 5, 2});
-        new NM6().solution(4, 2, new int[]{9, 8, 7, 1});
-        new NM6().solution(4, 4, new int[]{1231, 1232, 1233, 1234});
+        new NM11().solution(3, 1, new int[]{4, 4, 2});
+        new NM11().solution(4, 2, new int[]{9, 7, 9, 1});
+        new NM11().solution(4, 4, new int[]{1, 1, 2, 2});
     }
 }

@@ -10,7 +10,7 @@ public class NM5 {
         arr = new int[M];
         visited = new boolean[N];
         Arrays.sort(nums);
-        dfs(N, M,  0, nums);
+        dfs(N, M, 0, nums);
     }
 
     private void dfs(int N, int M, int L, int[] nums) {
@@ -26,7 +26,7 @@ public class NM5 {
             if (!visited[i]) {
                 visited[i] = true;
                 arr[L] = nums[i];
-                dfs(N, M,L + 1, nums);
+                dfs(N, M, L + 1, nums);
                 visited[i] = false;
             }
         }

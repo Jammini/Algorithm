@@ -31,7 +31,7 @@ public class NM10 {
                 before = nums[i];
                 visited[i] = true;
                 arr[L] = nums[i];
-                dfs(N, M, i,L + 1, nums);
+                dfs(N, M, i + 1,L + 1, nums);
                 visited[i] = false;
             }
         }

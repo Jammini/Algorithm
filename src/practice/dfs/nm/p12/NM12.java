@@ -1,12 +1,14 @@
-package practice.dfs.nm.p6;
+package practice.dfs.nm.p12;
 
 import java.util.Arrays;
 
-public class NM6 {
+public class NM12 {
     int[] arr;
+    boolean[] visited;
 
     public void solution(int N, int M, int[] nums) {
         arr = new int[M];
+        visited = new boolean[N];
         Arrays.sort(nums);
         dfs(N, M, 0, 0, nums);
     }
@@ -20,15 +22,19 @@ public class NM6 {
             return;
         }
 
+        int before = 0;
         for (int i = index; i < N; i++) {
-            arr[L] = nums[i];
-            dfs(N, M, i + 1, L + 1, nums);
+            if (before != nums[i]) {
+                before = nums[i];
+                arr[L] = nums[i];
+                dfs(N, M, i, L + 1, nums);
+            }
         }
     }
 
     public static void main(String[] args) {
-        new NM6().solution(3, 1, new int[]{4, 5, 2});
-        new NM6().solution(4, 2, new int[]{9, 8, 7, 1});
-        new NM6().solution(4, 4, new int[]{1231, 1232, 1233, 1234});
+        new NM12().solution(3, 1, new int[]{4, 4, 2});
+        new NM12().solution(4, 2, new int[]{9, 7, 9, 1});
+        new NM12().solution(4, 4, new int[]{1, 1, 2, 2});
     }
 }
