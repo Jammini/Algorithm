@@ -8,7 +8,7 @@ public class NM7 {
     public void solution(int N, int M, int[] nums) {
         arr = new int[M];
         Arrays.sort(nums);
-        dfs(N, M,  0, nums);
+        dfs(N, M, 0, nums);
     }
 
     private void dfs(int N, int M, int L, int[] nums) {
@@ -22,7 +22,7 @@ public class NM7 {
 
         for (int i = 0; i < N; i++) {
             arr[L] = nums[i];
-            dfs(N, M,L + 1, nums);
+            dfs(N, M, L + 1, nums);
         }
     }
 

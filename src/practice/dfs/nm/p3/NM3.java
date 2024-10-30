@@ -5,7 +5,7 @@ public class NM3 {
 
     public void Solution(int N, int M) {
         arr = new int[M];
-        dfs(N, M,  0);
+        dfs(N, M, 0);
     }
 
     private void dfs(int N, int M, int L) {

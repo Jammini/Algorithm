@@ -18,7 +18,7 @@ public class NM2 {
         }
         for (int i = index; i < N; i++) {
             arr[L] = i + 1;
-            dfs(N, M, i + 1,L + 1);
+            dfs(N, M, i + 1, L + 1);
         }
     }
 
