@@ -15,23 +15,22 @@ public class Solution {
             int value = map.get(key);
             list.add(new Number(key, value));
         }
-
         list.sort((a, b) -> a.count - b.count);
 
         int cnt = 0;
-        for(int i = 0; i < list.size(); i++) {
-            if(k <= 0) {
+        for (Number number : list) {
+            if (k <= 0) {
                 break;
             }
-            if(list.get(i).count <= k) {
-                k -= list.get(i).count;
+            if (number.count <= k) {
+                k -= number.count;
                 cnt++;
             }
         }
         return list.size() - cnt;
     }
 
-    class Number {
+    static class Number {
         int num;
         int count;
 
